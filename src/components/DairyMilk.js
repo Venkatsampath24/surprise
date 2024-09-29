@@ -37,7 +37,7 @@ const DairyMilk = () => {
   return (
     <div className="dairy-milk" onClick={handleAudioPlay}>
       <div className="chocolate-container">
-        <img src="/assets/dairy_milk.png" alt="Dairy Milk Chocolate" className="chocolate" />
+        <img src="/assets/Dairy_milk.png" alt="Dairy Milk Chocolate" className="chocolate" />
       </div>
 
       {emojiPositions.map((position, index) => (
