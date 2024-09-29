@@ -43,7 +43,7 @@ const DairyMilk = () => {
       {/* 360-degree rotating chocolate */}
       <div className="chocolate-container">
         <img
-          src="/assets/dairy_milk.png"
+          src="/assets/Dairy_milk.png"
           alt="Dairy Milk Chocolate"
           className="chocolate"
         />
