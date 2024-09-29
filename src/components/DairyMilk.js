@@ -1,4 +1,3 @@
-// src/components/DairyMilk.js
 import React, { useEffect, useState, useRef } from "react";
 import "../Styles/DairyMilk.css";
 
@@ -41,7 +40,9 @@ const DairyMilk = () => {
 
   return (
     <div className="dairy-milk" onClick={handleAudioPlay}>
-      <img src="/assets/dairy_milk.png" alt="Dairy Milk Chocolate" />
+      <div className="chocolate-container">
+        <img className="chocolate" src="/assets/dairy_milk.png" alt="Dairy Milk Chocolate" />
+      </div>
 
       {/* Display floating emojis */}
       {emojiPositions.map((position, index) => (
@@ -58,10 +59,10 @@ const DairyMilk = () => {
           {position.emoji}
         </div>
       ))}
-      
+
       {/* Message to indicate made by Venkat */}
       <div className="made-by-venkat">
-        Made by Venkat!!!
+        Created by Venkat!!!
       </div>
 
       {/* Audio element to play music */}

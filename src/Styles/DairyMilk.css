@@ -1,28 +1,36 @@
-/* src/styles/DairyMilk.css */
-
 .dairy-milk {
-    position: relative; /* Keep relative positioning */
-    animation: drop 2s ease-in-out forwards, glow 3s infinite alternate;
-    margin: 0; /* Remove top margin for full screen */
-    padding: 20px; /* Reduced padding for a tighter frame around the chocolate */
-    border: 5px solid #ff69b4; /* Reduced border thickness for a less prominent frame */
-    border-radius: 15px; /* Rounded corners for the frame */
-    background-color: #fff0f5; /* Background color for the frame */
-    max-width: 100%; /* Maximum width to prevent overflow */
-    width: 100%; /* Ensure it takes full width on mobile */
-    height: 95vh; /* Full height for mobile devices */
-    display: flex; /* Use flexbox for alignment */
-    flex-direction: column; /* Align children vertically */
-    justify-content: center; /* Center vertically */
-    align-items: center; /* Center horizontally */
-    box-sizing: border-box; /* Include padding and border in width/height calculations */
+    position: relative;
+    margin: 0;
+    padding: 20px;
+    border: 5px solid #ff69b4;
+    border-radius: 15px;
+    background-color: #fff0f5;
+    max-width: 100%;
+    width: 100%;
+    height: 95vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
 }
 
 .dairy-milk img {
-    width: 100%; /* Set image width to fill the container */
-    max-width: 300px; /* Keep a maximum width for the image */
-    height: auto; /* Maintain aspect ratio */
-    animation: bounce 1s ease-in-out, pulse 1.5s infinite alternate; /* Added pulse animation */
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    transform-style: preserve-3d; /* Enable 3D perspective for the image */
+    animation: rotateSelf 5s infinite linear; /* Rotate around its own axis */
+}
+
+/* 3D Self-Rotation Animation */
+@keyframes rotateSelf {
+    0% {
+        transform: rotateY(0deg); /* Start from 0-degree rotation */
+    }
+    100% {
+        transform: rotateY(360deg); /* Complete a full 360-degree rotation */
+    }
 }
 
 /* Wobble effect for a fun animation */
@@ -62,7 +70,6 @@
     }
 }
 
-/* Pulse animation */
 @keyframes pulse {
     0% {
         transform: scale(1);
@@ -95,13 +102,12 @@
 
 /* Style for the "Made by Venkat" message */
 .made-by-venkat {
-    font-size: 1.5em; /* Adjust font size as needed */
-    color: #ff69b4; /* Pink color for the text */
-    margin-top: 20px; /* Space between the chocolate and the message */
-    animation: fadeIn 2s ease-in; /* Fade-in animation */
+    font-size: 1.5em;
+    color: #ff69b4;
+    margin-top: 20px;
+    animation: fadeIn 2s ease-in;
 }
 
-/* Optional: Add fade-in animation */
 @keyframes fadeIn {
     0% { opacity: 0; }
     100% { opacity: 1; }
