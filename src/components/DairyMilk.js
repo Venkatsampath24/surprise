@@ -1,7 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import "../Styles/DairyMilk.css";
 
-// Extended list of emojis with more variety
 const emojis = [
   "🍫", "🌹", "❤️", "💖", "🎉", "✨", "🎁", "🥰", "😍", "💝",
   "💫", "💕", "🧚‍♂️", "🎀", "💎", "💐", "🌸", "🌷", "🌺", "🌻",
@@ -10,26 +9,23 @@ const emojis = [
 
 const DairyMilk = () => {
   const [emojiPositions, setEmojiPositions] = useState([]);
-  const audioRef = useRef(null); // Create a ref for the audio element
+  const audioRef = useRef(null);
 
-  // Function to generate random positions and random emojis
   const generateRandomEmojis = () => {
     const positions = Array.from({ length: 20 }, () => ({
       emoji: emojis[Math.floor(Math.random() * emojis.length)],
-      top: Math.random() * 100, // Random position for top
-      left: Math.random() * 100, // Random position for left
-      size: Math.random() * 2 + 1, // Random size for emojis (slightly larger range)
-      duration: Math.random() * 2 + 2, // Random animation duration
+      top: Math.random() * 100,
+      left: Math.random() * 100,
+      size: Math.random() * 2 + 1,
+      duration: Math.random() * 2 + 2,
     }));
     setEmojiPositions(positions);
   };
 
-  // Generate random emojis on component mount
   useEffect(() => {
     generateRandomEmojis();
   }, []);
 
-  // Handle audio play
   const handleAudioPlay = () => {
     if (audioRef.current) {
       audioRef.current.play().catch((error) => {
@@ -41,10 +37,9 @@ const DairyMilk = () => {
   return (
     <div className="dairy-milk" onClick={handleAudioPlay}>
       <div className="chocolate-container">
-        <img className="chocolate" src="/assets/dairy_milk.png" alt="Dairy Milk Chocolate" />
+        <img src="/assets/dairy_milk.png" alt="Dairy Milk Chocolate" className="chocolate" />
       </div>
 
-      {/* Display floating emojis */}
       {emojiPositions.map((position, index) => (
         <div
           key={index}
@@ -60,12 +55,10 @@ const DairyMilk = () => {
         </div>
       ))}
 
-      {/* Message to indicate made by Venkat */}
       <div className="made-by-venkat">
         Created by Venkat!!!
       </div>
 
-      {/* Audio element to play music */}
       <audio ref={audioRef} src="/assets/Jeans.mp3" loop onCanPlay={handleAudioPlay} />
     </div>
   );
