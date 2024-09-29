@@ -15,9 +15,9 @@ function App() {
     <div className="app">
       {step === 1 && (
         <div className="step-one">
-          <h1> Roja! 🌹</h1>
+          <h1> Roja!🌹</h1>
           <button onClick={handleNextStep} className="surprise-button">
-            Please Open Your Draw
+            Please Open for surprise
           </button>
         </div>
       )}

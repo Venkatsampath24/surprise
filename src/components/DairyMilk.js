@@ -10,16 +10,17 @@ const emojis = [
 
 const DairyMilk = () => {
   const [emojiPositions, setEmojiPositions] = useState([]);
-  const audioRef = useRef(null); // Create a ref for the audio element
+  const [showSurpriseMessage, setShowSurpriseMessage] = useState(false);
+  const audioRef = useRef(null);
 
   // Function to generate random positions and random emojis
   const generateRandomEmojis = () => {
     const positions = Array.from({ length: 20 }, () => ({
       emoji: emojis[Math.floor(Math.random() * emojis.length)],
-      top: Math.random() * 100, // Random position for top
-      left: Math.random() * 100, // Random position for left
-      size: Math.random() * 2 + 1, // Random size for emojis (slightly larger range)
-      duration: Math.random() * 2 + 2, // Random animation duration
+      top: Math.random() * 100,
+      left: Math.random() * 100,
+      size: Math.random() * 2 + 1,
+      duration: Math.random() * 2 + 2,
     }));
     setEmojiPositions(positions);
   };
@@ -36,6 +37,14 @@ const DairyMilk = () => {
         console.error("Error playing audio:", error);
       });
     }
+  };
+
+  // Handle surprise button click
+  const handleSurpriseClick = () => {
+    setShowSurpriseMessage(true);
+    setTimeout(() => {
+      setShowSurpriseMessage(false);
+    }, 5000); // Message will disappear after 5 seconds
   };
 
   return (
@@ -65,9 +74,21 @@ const DairyMilk = () => {
         </div>
       ))}
 
+      {/* Surprise button */}
+      <button className="surprise-button" onClick={handleSurpriseClick}>
+        Click for a Surprise!
+      </button>
+
+      {/* Surprise message */}
+      {showSurpriseMessage && (
+        <div className="surprise-message">
+          Open your drawer and take your Dairy Milk chocolate! 🎉🍫
+        </div>
+      )}
+
       {/* Message to indicate made by Venkat */}
       <div className="made-by-venkat">
-        Created by Venkat!!!
+        Created by Venkat!
       </div>
 
       {/* Audio element to play music */}

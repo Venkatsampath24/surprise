@@ -89,6 +89,29 @@
     animation: floatUp 4s infinite ease-in-out;
 }
 
+.surprise-button {
+    background-color: #ff8000; /* Orange */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 20px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+  
+  .surprise-button:hover {
+    background-color: #0ce39f; /* Lighter orange */
+  }
+  
+  .surprise-message {
+    margin-top: 20px;
+    font-size: 20px;
+    color: #d84d1a; /* Orange Red */
+  }
+  
+
 @keyframes floatUp {
     0% {
         transform: translateY(0);
