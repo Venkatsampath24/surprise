@@ -1,23 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+// src/App.js
+import React, { useState } from "react";
+import "./App.css";
+import NameAnimation from "./components/NameAnimation";
+import DairyMilk from "./components/DairyMilk";
 
 function App() {
+  const [step, setStep] = useState(1); // Track which step of the surprise we are on
+
+  const handleNextStep = () => {
+    setStep(step + 1); // Move to the next step on button click
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      {step === 1 && (
+        <div className="step-one">
+          <h1> Roja! 🌹</h1>
+          <button onClick={handleNextStep} className="surprise-button">
+            Please Open Your Draw
+          </button>
+        </div>
+      )}
+      {step === 2 && (
+        <div className="step-two">
+          <NameAnimation name="Roja" />
+          <button onClick={handleNextStep} className="next-button">
+            Click to Reveal Your surprise
+          </button>
+        </div>
+      )}
+      {step === 3 && (
+        <div className="step-three">
+          <DairyMilk />
+        </div>
+      )}
     </div>
   );
 }
