@@ -15,7 +15,7 @@ function App() {
     <div className="app">
       {step === 1 && (
         <div className="step-one">
-          <h1> Roja!🌹</h1>
+          <h1> Hey Click Here</h1>
           <button onClick={handleNextStep} className="surprise-button">
             Please Open for surprise
           </button>
@@ -23,7 +23,7 @@ function App() {
       )}
       {step === 2 && (
         <div className="step-two">
-          <NameAnimation name="Roja" />
+          <NameAnimation name="" />
           <button onClick={handleNextStep} className="next-button">
             Click to Reveal Your surprise
           </button>

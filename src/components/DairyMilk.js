@@ -82,13 +82,13 @@ const DairyMilk = () => {
       {/* Surprise message */}
       {showSurpriseMessage && (
         <div className="surprise-message">
-          Open your drawer and take your Dairy Milk chocolate! 🎉🍫
+         🍫
         </div>
       )}
 
       {/* Message to indicate made by Venkat */}
       <div className="made-by-venkat">
-        Created by Venkat!
+        {/* Created by Venkat! */}
       </div>
 
       {/* Audio element to play music */}
